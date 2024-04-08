@@ -4,6 +4,7 @@ import '../home/home_page.dart';
 import '../profile/profile_page.dart';
 
 class WZMainPage extends StatefulWidget {
+  static String routeName = '/';
   const WZMainPage({super.key});
 
   @override
