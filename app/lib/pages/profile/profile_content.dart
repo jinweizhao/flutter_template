@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_template/pages/animationDemo/AnimationDemoPage.dart';
 
 import '../about/AboutPage.dart';
 
@@ -30,6 +31,15 @@ class _ProfileContentState extends State<ProfileContent> {
               Navigator.of(context).pushNamed(JJAboutPage.routeName);
             },
             child: const Text('to detail'),
+          ),
+          TextButton(
+            style: TextButton.styleFrom(
+                textStyle: const TextStyle(fontSize: 20),
+                backgroundColor: Colors.red),
+            onPressed: () {
+              Navigator.of(context).pushNamed(AnimationDemoPage.routeName);
+            },
+            child: const Text('To Animation Demo'),
           ),
           Text(
             widget._message,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'pages/about/AboutPage.dart';
+import 'pages/animationDemo/AnimationDemoPage.dart';
 import 'pages/main/main.dart';
 import 'pages/unknown/unknown_page.dart';
 
@@ -10,6 +11,8 @@ class JJRouter {
     JJAboutPage.routeName: (context) => const JJAboutPage(),
 
     WZMainPage.routeName: (context) => const WZMainPage(),
+
+    AnimationDemoPage.routeName: (context) => const AnimationDemoPage(),
   };
 
   static final String initialRoute = WZMainPage.routeName;
