@@ -9,7 +9,6 @@ class JJAboutPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("about"),
-        backgroundColor: Colors.green,
       ),
       body: const Text("about"),
     );

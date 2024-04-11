@@ -70,10 +70,10 @@ class _AnimationDemoPageState extends State<AnimationDemoPage>
                   )),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(PageRouteBuilder(
-                      pageBuilder: (ctx, animation, animation2) {
+                  Navigator.of(context).push(
+                      PageRouteBuilder(pageBuilder: (ctx, anim1, animation2) {
                     return FadeTransition(
-                      opacity: animation,
+                      opacity: anim1,
                       child:
                           HYImageDetail("https://picsum.photos/id/1/400/200"),
                     );
@@ -110,24 +110,32 @@ class HYImageDetail extends StatelessWidget {
 
   HYImageDetail(this.imageURL);
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
-        child: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-            child: Hero(
-              tag: imageURL,
-              child: Image.network(
-                this.imageURL,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-            )),
-      ),
+          child: Column(
+        children: [
+          GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+              child: Hero(
+                tag: imageURL,
+                child: Image.network(
+                  this.imageURL,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              )),
+          const Text(
+            "详详情详情详情详情详情详情情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情详情",
+            style: TextStyle(color: Colors.white),
+          )
+        ],
+      )),
     );
   }
 }
