@@ -47,7 +47,7 @@ class _AnimationDemoPageState extends State<AnimationDemoPage>
         body: ConstrainedBox(
           constraints: const BoxConstraints(minWidth: double.infinity),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
@@ -68,6 +68,21 @@ class _AnimationDemoPageState extends State<AnimationDemoPage>
                       size: 100,
                     ),
                   )),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(PageRouteBuilder(
+                      pageBuilder: (ctx, animation, animation2) {
+                    return FadeTransition(
+                      opacity: animation,
+                      child:
+                          HYImageDetail("https://picsum.photos/id/1/400/200"),
+                    );
+                  }));
+                },
+                child: Hero(
+                    tag: "https://picsum.photos/id/1/400/200",
+                    child: Image.network("https://picsum.photos/id/1/400/200")),
+              )
             ],
           ),
         ),
@@ -87,5 +102,32 @@ class _AnimationDemoPageState extends State<AnimationDemoPage>
   void dispose() {
     controller.dispose();
     super.dispose();
+  }
+}
+
+class HYImageDetail extends StatelessWidget {
+  final String imageURL;
+
+  HYImageDetail(this.imageURL);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Center(
+        child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+            },
+            child: Hero(
+              tag: imageURL,
+              child: Image.network(
+                this.imageURL,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            )),
+      ),
+    );
   }
 }
