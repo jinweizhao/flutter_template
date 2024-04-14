@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_template/JJRouter.dart';
 
 void main() {
@@ -12,11 +13,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+
       theme: ThemeData(
-          appBarTheme: const AppBarTheme(color: Colors.red),
+          scaffoldBackgroundColor: Colors.orange,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.red,
+
+            ///禁止毛玻璃
+            elevation: 1,
+          ),
+          // appBarTheme: const AppBarTheme(color: Colors.red),
           bottomAppBarTheme: const BottomAppBarTheme(color: Colors.blue),
           // 2.primarySwatch: primaryColor/accentColor的结合体
-          primarySwatch: Colors.yellow,
           // 3.主要颜色: 导航/底部TabBar
           primaryColor: Colors.green,
           // 5.卡片主题

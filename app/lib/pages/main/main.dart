@@ -30,6 +30,7 @@ class _WZMainPageState extends State<WZMainPage> {
             });
           },
           currentIndex: _currentIndex,
+          backgroundColor: Colors.blue,
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_max),
