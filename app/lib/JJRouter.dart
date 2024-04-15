@@ -20,6 +20,8 @@ class JJRouter {
   static RouteFactory getGenerateRoute() {
     return (settings) {
       ///settings.arguments   获取跳转的参数
+      ///
+      ///在to 的页面获取上个页面传来的数据 final model = ModalRoute.of(context).settings.arguments as DetailModel
       if (settings.name == "/about") {
         return MaterialPageRoute(builder: (ctx) {
           return const JJAboutPage();
