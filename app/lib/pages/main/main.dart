@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/manager/local_storage.dart';
 
 import '../home/home_page.dart';
 import '../profile/profile_page.dart';
@@ -13,7 +14,7 @@ class WZMainPage extends StatefulWidget {
 
 class _WZMainPageState extends State<WZMainPage> {
   int _currentIndex = 0;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +26,10 @@ class _WZMainPageState extends State<WZMainPage> {
           selectedFontSize: 12,
           useLegacyColorScheme: false,
           onTap: (value) {
+            LocalStorage.getInstance()
+                .setString("currentIndex", value.toString());
+            final a = LocalStorage.getInstance().getString("currentIndex");
+            debugPrint(a);
             setState(() {
               _currentIndex = value;
             });

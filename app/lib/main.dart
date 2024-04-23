@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_template/JJRouter.dart';
+import 'package:flutter_template/manager/local_storage.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  LocalStorage.preInit();
   runApp(const MyApp());
 }
 

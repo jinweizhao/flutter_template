@@ -64,8 +64,10 @@ class HttpRequest {
 class CustomInterceptors extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers["Authorization"] = LocalStorage.getString("token");
-    options.headers["language"] = LocalStorage.getString("language");
+    options.headers["Authorization"] =
+        LocalStorage.getInstance().getString("token");
+    options.headers["language"] =
+        LocalStorage.getInstance().getString("language");
 
     super.onRequest(options, handler);
   }
