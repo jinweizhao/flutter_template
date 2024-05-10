@@ -44,4 +44,9 @@ class LocalStorage {
   Future<bool>? setBool(String key, bool value) {
     return _prefs?.setBool(key, value);
   }
+
+  //通过泛型来取值
+  T? get<T>(String key) {
+    return _prefs?.get(key) as T?;
+  }
 }

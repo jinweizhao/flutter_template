@@ -4,12 +4,12 @@ import 'package:flutter_template/manager/local_storage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  LocalStorage.preInit();
-  Firebase.initializeApp(
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await LocalStorage.preInit();
   runApp(const MyApp());
 }
 
@@ -46,6 +46,9 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
           highlightColor: Colors.transparent),
+
+      themeMode: ThemeMode.system,
+
       initialRoute: JJRouter.initialRoute,
       routes: JJRouter.routes,
 

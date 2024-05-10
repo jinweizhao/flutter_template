@@ -21,7 +21,13 @@ class _WZMainPageState extends State<WZMainPage> {
     return Scaffold(
       body: IndexedStack(
         index: _currentIndex,
-        children: const [HomePage(), ProfilePage()],
+        children: [
+          const HomePage(),
+          const ProfilePage(),
+          Theme(
+              data: ThemeData.light(),
+              child: const Text("data"))
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
           selectedFontSize: 12,
