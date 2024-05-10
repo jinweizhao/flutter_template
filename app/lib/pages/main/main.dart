@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_template/manager/local_storage.dart';
 
@@ -14,7 +15,7 @@ class WZMainPage extends StatefulWidget {
 
 class _WZMainPageState extends State<WZMainPage> {
   int _currentIndex = 0;
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +33,9 @@ class _WZMainPageState extends State<WZMainPage> {
             debugPrint(a);
             setState(() {
               _currentIndex = value;
+              FirebaseAnalytics.instance.logEvent(
+                  name: "selected_index",
+                  parameters: {"index": value.toString()});
             });
           },
           currentIndex: _currentIndex,
