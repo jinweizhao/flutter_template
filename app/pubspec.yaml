@@ -45,31 +45,32 @@ dependencies:
   #屏幕适配
   flutter_screenutil: ^5.9.0
   #设备信息
-  device_info_plus: ^9.1.0
+  device_info_plus: ^11.3.3
   #toast
   fluttertoast: ^8.2.2
   #本地存储
   shared_preferences: ^2.2.3
   #数据库管理
-  objectbox: ^2.3.1
+  objectbox: ^4.2.0
   #webview
   # webview_flutter: ^4.4.1
   # flutter_inappwebview: ^5.8.0
   #带缓存的图片加载
   cached_network_image: ^3.3.0
   #动画
-  lottie: ^2.7.0
+  lottie: ^3.3.1
   #下拉刷新
   easy_refresh: ^3.3.2+2
   #三方登录
   google_sign_in: ^6.1.5
-  sign_in_with_apple: ^5.0.0
-  flutter_launcher_icons: ^0.13.1
-  firebase_core: ^2.31.0
-  firebase_analytics: ^10.10.5
-  firebase_messaging: ^14.9.2
-  firebase_crashlytics: ^3.5.5
-  firebase_performance: ^0.9.4+5
+  sign_in_with_apple: ^7.0.1
+  flutter_launcher_icons: ^0.14.3
+  firebase_core: ^3.13.0
+  firebase_analytics: ^11.4.5
+  firebase_messaging: ^15.2.5
+  firebase_crashlytics: ^4.3.5
+  firebase_performance: ^0.10.1+5
+  get: ^4.7.2
 
 dev_dependencies:
   flutter_test:
@@ -80,7 +81,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
